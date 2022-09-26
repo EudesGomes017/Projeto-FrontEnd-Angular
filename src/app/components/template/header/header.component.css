@@ -1,0 +1,16 @@
+img {
+    height: 3rem;
+}
+
+.header {
+    justify-content: center;
+}
+
+span {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+h2 {
+    padding-left: 1rem;
+}

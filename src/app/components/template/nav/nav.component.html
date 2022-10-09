@@ -1,0 +1,27 @@
+<mat-sidenav-container class="container">
+
+    <mat-sidenav mode="side" opened> <!--mode="side" > infomrando q vai ser ao lado / opened > vamos deixar aberto-->
+
+        <mat-nav-list>
+            <a routerLink="" mat-list-item>
+                <i class="material-icons">home</i>
+                Home
+            </a>
+        </mat-nav-list>
+
+        <mat-nav-list>
+            <a routerLink="/categorias" mat-list-item>
+                <i class="material-icons">dashboard</i>
+                Category
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+<mat-sidenav-content>
+    <!--tudo q eu colocar aqui vai renderizar na parte de dentro da nossa página-->
+    <router-outlet></router-outlet>
+
+</mat-sidenav-content>
+
+</mat-sidenav-container>

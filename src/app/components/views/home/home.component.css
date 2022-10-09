@@ -1,0 +1,18 @@
+.home {
+    width: 95%;
+    margin: 1rem auto;
+}
+
+
+/*para tamnhos de smartphones*/
+@media(max-width: 450px) {
+    .home {
+        width: 70%;
+    } 
+}
+/*ipad*/
+@media(max-width: 760px) {
+    .home {
+        width: 80%;
+    } 
+}

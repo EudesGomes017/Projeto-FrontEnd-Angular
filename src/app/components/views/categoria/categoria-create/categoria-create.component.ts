@@ -2,6 +2,7 @@ import { Categoria } from './../category.model';
 import { CategoriaService } from './../categoria.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SSL_OP_NETSCAPE_DEMO_CIPHER_CHANGE_BUG } from 'constants';
 
 @Component({
   selector: 'app-categoria-create',
@@ -12,7 +13,7 @@ export class CategoriaCreateComponent implements OnInit {
 
   categoria: Categoria = {
     name: '',
-    description: ''
+    descricao: ''
   }
 
   constructor(private service: CategoriaService, private router: Router) { }
@@ -27,11 +28,23 @@ export class CategoriaCreateComponent implements OnInit {
       this.router.navigate(['categorias'])
       this.service.mensagem('category successfully created! ');
     }, err => {
-      //for para pegar o a posição do vetor do error descrito no backAnd
-      for(let i  = 0; i < err.error.erros.lenght; i++) {
-        this.service.mensagem(err.error.erros[i].message);
+     // debugger 
+    // console.log(err.error.erros.length)
+
+      for(let i = 0; i < err.error.erros.length; i++) {
+        
+        this.service.mensagem(err.error.erros[i].massage)
       }
+     // console.log(err.error.erros[0].massage, 'error')
     })
   }
+
+  cancel(): void {
+    this.router.navigate(['categorias'])
+  }
+
+  
+
+
 
 }

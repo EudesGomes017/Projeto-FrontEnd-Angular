@@ -24,14 +24,14 @@ export class CategoriaService {
   }
 
   create(categoria: Categoria): Observable<Categoria> {
-    const url =   `${this.baseUrl}/categorias`
+    const url = `${this.baseUrl}/categorias`
     return this.http.post<Categoria>(url, categoria);
   }
 
   mensagem(str: String): void {
     this._snack.open(`${str}`, // mensagem para usuario
      'ok', //quando clica no ok
-     {horizontalPosition: 'end', //ao final da tela 
+     { horizontalPosition: 'end', //ao final da tela 
      verticalPosition: 'top', // topo da tela
      duration: 3000 // tempo que o snackbar vai fica na tela 
   }) 

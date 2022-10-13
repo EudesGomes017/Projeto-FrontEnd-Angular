@@ -22,10 +22,21 @@ export class CategoriaService {
     const url = `${this.baseUrl}/categorias`
     return this.http.get<Categoria[]>(url)
   }
+  //busca de uma categoria por id
+  findById(id: String): Observable<Categoria> {
+    const url = `${this.baseUrl}/categorias/${id}` //pegando a variavel do id
+    return this.http.get<Categoria>(url)
+
+  } 
 
   create(categoria: Categoria): Observable<Categoria> {
     const url = `${this.baseUrl}/categorias`
     return this.http.post<Categoria>(url, categoria);
+  }
+
+  delete(id: String): Observable<void> {
+    const url = `${this.baseUrl}/categorias/${id}`
+    return this.http.delete<void>(url)
   }
 
   mensagem(str: String): void {

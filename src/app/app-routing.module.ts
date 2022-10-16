@@ -1,3 +1,4 @@
+import { ProdutoDeleteComponent } from './components/views/livro/produto-delete/produto-delete.component';
 
 import { LivroReadAllComponent } from './components/views/livro/produtos-read-all/produtos-read-all.component';
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
@@ -49,6 +50,11 @@ const routes: Routes = [
   {
     path: 'categorias/:id_cat/produtos/:id/update',
     component: ProdutosUpdateComponent
+  },
+
+  {
+    path: 'categorias/:id_cat/produtos/:id/delete',
+    component: ProdutoDeleteComponent
   }
 
 

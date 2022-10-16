@@ -1,0 +1,29 @@
+<form>
+    <h1>Delete products</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="produtos.title" type="text" name="name" disabled>
+
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Name Products</mat-label>
+        <input matInput [(ngModel)]="produtos.name_estoque" type="text" name="name_products" disabled>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Text</mat-label>
+        <textarea matInput [(ngModel)]="produtos.text" type="text" name="Text" disabled></textarea>
+    </mat-form-field>
+
+    <div class="buttons">
+        <!--condição do botao ate os requisitos serem obdecidos
+        enquanto o !getMessage() nao retorna false-->
+        <button (click)="delete()" [disabled]="getMessage()" class="mat-elevation-z8" mat-stroked-button color="primary">Delete</button>
+        <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="war">Cancel</button>
+    </div>
+</form>
+
+
+

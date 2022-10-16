@@ -27,6 +27,7 @@ import { CategoriaUpdateComponent } from './components/views/categoria/categoria
 import { LivroReadAllComponent } from './components/views/livro/produtos-read-all/produtos-read-all.component';
 import { ProdutosCreateComponent } from './components/views/livro/produtos-create/produtos-create.component';
 import { ProdutosUpdateComponent } from './components/views/livro/produtos-update/produtos-update.component';
+import { ProdutoDeleteComponent } from './components/views/livro/produto-delete/produto-delete.component';
 
 
 
@@ -44,6 +45,7 @@ import { ProdutosUpdateComponent } from './components/views/livro/produtos-updat
     LivroReadAllComponent,
     ProdutosCreateComponent,
     ProdutosUpdateComponent,
+    ProdutoDeleteComponent,
     
     
     

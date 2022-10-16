@@ -41,6 +41,12 @@ export class ProdutosService {
     return this.http.post<Produtos>(url, produto)
   }
 
+  delete(id: String):Observable<void> {
+    const url = `${this.baseUrl}/produtos/${id}`
+    return this.http.delete<void>(url)
+
+  }
+
 
   mensagem(str: String): void {
     this._snack.open(`${str}`, // mensagem para usuario

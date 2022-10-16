@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutosService } from './../produtos.service';
 import { Produtos } from './../prutos.model';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +17,8 @@ export class LivroReadAllComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'title', 'produtos', 'action'];
 
-  constructor(private service: ProdutosService, private route: ActivatedRoute) { }
+  constructor(private service: ProdutosService, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.id_cat = this.route.snapshot.paramMap.get('id_cat')!;
@@ -29,6 +30,11 @@ export class LivroReadAllComponent implements OnInit {
       this.produtos = resposta;
       console.log(this.produtos)
     });
+  }
+
+  navegarparacriarprodutos(): void {
+    this.router.navigate([`categorias/${this.id_cat}/produtos/create`])
+    
   }
 
 

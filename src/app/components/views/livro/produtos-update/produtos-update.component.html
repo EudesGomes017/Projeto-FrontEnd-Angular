@@ -1,0 +1,45 @@
+<form>
+    <h1>Updating products</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="produtos.title" [formControl]="produto" required  type="text" name="name" placeholder="Ex:Products" maxlength="100">
+
+    </mat-form-field>
+
+
+    <!--validação da condição do formulario-->
+    <mat-error *ngIf="produto.invalid"> {{ getMessage() }}
+
+    </mat-error>
+
+    <mat-form-field class="form">
+        <mat-label>Name Products</mat-label>
+        <input matInput [(ngModel)]="produtos.name_estoque" [formControl]="name_products" required  type="text" name="name_products" placeholder="Ex:Products" maxlength="100">
+    </mat-form-field>
+
+    <!--validação da condição do formulario-->
+    <mat-error *ngIf="produto.invalid"> {{ getMessage() }}
+
+    </mat-error>
+
+    <mat-form-field class="form">
+        <mat-label>Text</mat-label>
+        <textarea matInput [(ngModel)]="produtos.text" [formControl]="text" required  type="text" name="Text" placeholder="Ex:Text" maxlength="1000000"></textarea>
+    </mat-form-field>
+
+    <!--validação da condição do formulario-->
+    <mat-error *ngIf="produto.invalid"> {{ getMessage() }}
+
+    </mat-error>
+
+
+    <div class="buttons">
+        <!--condição do botao ate os requisitos serem obdecidos
+        enquanto o !getMessage() nao retorna false-->
+        <button  [disabled]="getMessage()" class="mat-elevation-z8" mat-stroked-button color="primary">Update</button>
+        <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="war">Cancel</button>
+    </div>
+</form>
+
+

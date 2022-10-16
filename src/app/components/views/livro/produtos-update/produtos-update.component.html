@@ -37,7 +37,7 @@
     <div class="buttons">
         <!--condição do botao ate os requisitos serem obdecidos
         enquanto o !getMessage() nao retorna false-->
-        <button  [disabled]="getMessage()" class="mat-elevation-z8" mat-stroked-button color="primary">Update</button>
+        <button (click)="update()" [disabled]="getMessage()" class="mat-elevation-z8" mat-stroked-button color="primary">Update</button>
         <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="war">Cancel</button>
     </div>
 </form>

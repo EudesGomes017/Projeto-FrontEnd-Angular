@@ -35,13 +35,29 @@ export class ProdutosUpdateComponent implements OnInit {
    private router: Router) { }
 
  ngOnInit(): void {
-   this.id_cat = this.route.snapshot.paramMap.get('id_cat')!//pegando o id da categoria na url
-   this.produtos.id = this.route.snapshot.paramMap.get('id')!//pegando id do produto
-
+   this.id_cat = this.route.snapshot.paramMap.get('id_cat')!;//pegando o id da categoria na url
+   this.produtos.id = this.route.snapshot.paramMap.get('id')!;//pegando id do produto
+   this.findById()
+  
  }
 
  
+ findById(): void {
+  this.service.findById(this.produtos.id!).subscribe(( resposta) => {
+    this.produtos = resposta
+  })
+ }
 
+ update(): void {
+  this.service.upDate(this.produtos).subscribe((resposta) => {
+    this.router.navigate([`categorias/${this.id_cat}/produtos`]);
+    this.service.mensagem('Produto atualizado com sucesso!')
+
+  }, err => {
+    this.router.navigate([`categorias/${this.id_cat}/produtos`]);
+    this.service.mensagem('Falha ao atualizar Produto..')
+  })
+ }
 
  cancel(): void {
    this.router.navigate([`categorias/${this.id_cat}/produtos`]);

@@ -20,6 +20,21 @@ export class ProdutosService {
     return this.http.get<Produtos[]>(url)
   }
 
+  //metodo para buscar as informações do id
+  findById(id: String): Observable<Produtos> {
+    const url = `${this.baseUrl}/produtos/${id}`
+    return this.http.get<Produtos>(url)
+
+  }
+
+
+  //metodo update
+  upDate(produto: Produtos): Observable<Produtos> {
+    const url = `${this.baseUrl}/produtos/${produto.id}`
+    return this.http.put<Produtos>(url, produto)
+
+  }
+
 
   create(produto: Produtos, id_cat: String): Observable<Produtos> {
     const url = `${this.baseUrl}/produtos?categoria=${id_cat}`

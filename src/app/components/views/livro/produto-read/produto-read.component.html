@@ -1,0 +1,19 @@
+<form >
+    <mat-card class="home mar-elevation-z4">
+        <mat-card-title class="title">{{ produtos.title }}</mat-card-title>
+    </mat-card>
+
+    <mat-card class="home mar-elevation-z4">
+        <mat-card-subtitle class="subtitle">{{ produtos.name_estoque }}</mat-card-subtitle>
+        <button (click)="cancel()" mat-stocked-button color="war">
+            <mat-icon>Return free icon</mat-icon>
+        </button>
+    </mat-card>
+
+    <mat-card class="home mar-elevation-z4">
+        <mat-card-subtitle class="subtitle">{{ produtos.text}}</mat-card-subtitle>
+       
+    </mat-card>
+
+    
+</form>
